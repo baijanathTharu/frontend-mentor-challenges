@@ -50,19 +50,25 @@ const url =
 
 searchBtn.addEventListener("click", () => {
   loader.style.visibility = "visible";
-  fetch(url + ipAddrs.value)
-    .then((res) => {
-      res.json().then((data) => {
-        list.ip.innerText = data.ip;
-        list.loc.innerText = data.location.city;
-        list.time.innerText = data.location.timezone;
-        list.isp.innerText = data.isp;
-        appMap(data.location.lat, data.location.lng, 15);
+  const regExp = /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/;
+  if (regExp.test(ipAddrs.value)) {
+    fetch(url + ipAddrs.value)
+      .then((res) => {
+        res.json().then((data) => {
+          list.ip.innerText = data.ip;
+          list.loc.innerText = data.location.city;
+          list.time.innerText = data.location.timezone;
+          list.isp.innerText = data.isp;
+          appMap(data.location.lat, data.location.lng, 15);
+          loader.style.visibility = "hidden";
+        });
+      })
+      .catch((err) => {
+        console.log(err);
         loader.style.visibility = "hidden";
       });
-    })
-    .catch((err) => {
-      console.log(err);
-      loader.style.visibility = "hidden";
-    });
+  } else {
+    console.log("Enter correct ip address");
+    loader.style.visibility = "hidden";
+  }
 });
