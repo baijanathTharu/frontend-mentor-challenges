@@ -92,6 +92,17 @@ main h1 {
   margin: 3px;
 }
 
+.error {
+  text-align: center;
+  color: white;
+  background-color: red;
+  border-radius: 20px;
+  padding: 10px;
+  width: 90vw;
+  margin: 10px 0;
+  display: none;
+}
+
 .list {
   display: flex;
   flex-direction: column;

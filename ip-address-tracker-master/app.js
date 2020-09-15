@@ -18,6 +18,8 @@ const list = {
 
 const loader = document.querySelector(".loader");
 
+const error = document.querySelector(".error");
+
 const ipMap = L.map("map");
 
 const appMap = (lat, lng, zoom) => {
@@ -55,6 +57,8 @@ searchBtn.addEventListener("click", () => {
     fetch(url + ipAddrs.value)
       .then((res) => {
         res.json().then((data) => {
+          error.textContent = "";
+          error.style.display = "none";
           list.ip.innerText = data.ip;
           list.loc.innerText = data.location.city;
           list.time.innerText = data.location.timezone;
@@ -65,10 +69,14 @@ searchBtn.addEventListener("click", () => {
       })
       .catch((err) => {
         console.log(err);
+        error.style.display = "block";
+        error.textContent = err;
         loader.style.visibility = "hidden";
       });
   } else {
     console.log("Enter correct ip address");
+    error.style.display = "block";
+    error.textContent = "Enter correct ip address";
     loader.style.visibility = "hidden";
   }
 });
