@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | IP Address Tracker</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="pattern">
+      <img src="./images/pattern-bg.png" alt="pattern" />
+      <div id="map"></div>
+    </div>
+    <div class="loader">
+      <img src="./images//loader.gif" alt="loader" />
+    </div>
+    <main>
+      <h1>IP Address Tracker</h1>
+      <div class="search-box">
+        <input type="text" id="ip-address" placeholder="192.168.0.101" />
+        <div class="search-btn">
+          <img src="./images//icon-arrow.svg" alt="search button" />
+        </div>
+      </div>
+      <ul class="list">
+        <li class="item">
+          <h3>IP Address</h3>
+          <h2 id="ip">8.8.8.8</h2>
+        </li>
+        <li class="item">
+          <h3>Location</h3>
+          <h2 id="loc">Mountain View</h2>
+        </li>
+        <li class="item">
+          <h3>Timezone</h3>
+          <h2 id="time">-07:00</h2>
+        </li>
+        <li class="item">
+          <h3>ISP</h3>
+          <h2 id="isp">Google LLC</h2>
+        </li>
+      </ul>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
