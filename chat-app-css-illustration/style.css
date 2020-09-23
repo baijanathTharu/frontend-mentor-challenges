@@ -169,7 +169,7 @@ i {
 }
 
 .chat-left {
-  background-color: var(--clr-grayish-blue);
+  background-color: var(--clr-light-grayish-violet);
   border-radius: 15px;
   margin: 10px;
   padding: 10px;
@@ -188,6 +188,7 @@ i {
   /* text-align: right; */
   width: fit-content;
   max-width: 60%;
+  color: var(-- --clr-vdesat-dark-violet);
 }
 
 .image {
@@ -304,4 +305,40 @@ main p {
   margin-left: auto;
   margin-right: auto;
   color: var(--clr-grayish-blue);
+}
+
+@media (min-width: 800px) {
+  .bg {
+    width: 350px;
+    height: 400px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    /* display: none; */
+  }
+
+  .curve {
+    top: 150px;
+    width: 420px;
+    clip-path: circle(50% at 50% 50%);
+  }
+
+  .mobile {
+    top: 30px;
+    left: 450px;
+  }
+
+  main {
+    position: fixed;
+    top: 320px;
+    left: 600px;
+    transform: translate(0, -50%);
+    margin-top: 0px;
+    text-align: center;
+    padding: 0;
+    /* border: 1px solid red; */
+    width: 30%;
+    margin-left: auto;
+  }
+  main h2 {
+    font-size: 2rem;
+  }
 }
